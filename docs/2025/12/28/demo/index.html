@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo | Tech Knowledge Base</title>
+    <meta name="description" content="GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。">
+    <link rel="stylesheet" href="/knowledge/assets/css/style.css">
+    <link type="application/atom+xml" rel="alternate" href="https://n-has3.github.io/knowledge/feed.xml" title="Tech Knowledge Base" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>demo | Tech Knowledge Base</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="demo" />
+<meta name="author" content="n-has3" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。" />
+<meta property="og:description" content="GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。" />
+<link rel="canonical" href="https://n-has3.github.io/knowledge/2025/12/28/demo/" />
+<meta property="og:url" content="https://n-has3.github.io/knowledge/2025/12/28/demo/" />
+<meta property="og:site_name" content="Tech Knowledge Base" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-28T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="demo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"n-has3"},"dateModified":"2025-12-28T00:00:00+09:00","datePublished":"2025-12-28T00:00:00+09:00","description":"GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。","headline":"demo","mainEntityOfPage":{"@type":"WebPage","@id":"https://n-has3.github.io/knowledge/2025/12/28/demo/"},"url":"https://n-has3.github.io/knowledge/2025/12/28/demo/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/knowledge/">Tech Knowledge Base</a>
+            <nav class="site-nav">
+                <a href="/knowledge/">Home</a>
+                <a href="/knowledge/categories">Categories</a>
+                <a href="/knowledge/tags">Tags</a>
+                <a href="/knowledge/search">Search</a>
+                <a href="/knowledge/archive">Archive</a>
+                <a href="/knowledge/about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="post">
+    <header class="post-header">
+        <h1 class="post-title">demo</h1>
+        <p class="post-meta">
+            <time datetime="2025-12-28T00:00:00+09:00">
+                2025年12月28日
+            </time>
+            
+                <span class="post-author">by n-has3</span>
+            
+            
+                <span class="post-categories">
+                    
+                        <span class="category">Jekyll</span>
+                    
+                        <span class="category">Web開発</span>
+                    
+                </span>
+            
+        </p>
+    </header>
+
+    <div class="post-content">
+        <p>GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。</p>
+
+<h2 id="jekyllとは">Jekyllとは</h2>
+
+<p>Jekyllは静的サイトジェネレーターで、Markdownファイルから美しいウェブサイトを生成できます。GitHub Pagesと統合されているため、無料でホスティングできます。</p>
+
+<h2 id="基本的な構成">基本的な構成</h2>
+
+<p>Jekyllサイトの基本構成は以下の通りです：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── _config.yml       # サイト設定
+├── _layouts/         # レイアウトテンプレート
+├── _posts/          # ブログ記事
+├── assets/          # CSS、画像などの静的ファイル
+└── index.md         # トップページ
+</code></pre></div></div>
+
+<h2 id="記事の書き方">記事の書き方</h2>
+
+<p>記事は <code class="language-plaintext highlighter-rouge">_posts</code> ディレクトリに配置します。ファイル名は <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code> の形式にする必要があります。</p>
+
+<h3 id="front-matter">Front Matter</h3>
+
+<p>各記事の先頭には、YAMLフロントマターを記述します：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">記事のタイトル"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2025-12-28</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">カテゴリ1</span><span class="pi">,</span> <span class="nv">カテゴリ2</span><span class="pi">]</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">タグ1</span><span class="pi">,</span> <span class="nv">タグ2</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="markdown記法">Markdown記法</h3>
+
+<p>Jekyllでは標準的なMarkdown記法が使えます：</p>
+
+<ul>
+  <li><strong>太字</strong>: <code class="language-plaintext highlighter-rouge">**太字**</code></li>
+  <li><em>斜体</em>: <code class="language-plaintext highlighter-rouge">*斜体*</code></li>
+  <li><a href="https://example.com">リンク</a>: <code class="language-plaintext highlighter-rouge">[リンク](URL)</code></li>
+  <li>コードブロック: バッククォート3つで囲む</li>
+</ul>
+
+<h2 id="コードのシンタックスハイライト">コードのシンタックスハイライト</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="便利な機能">便利な機能</h2>
+
+<h3 id="カテゴリとタグ">カテゴリとタグ</h3>
+
+<p>記事にカテゴリとタグを設定することで、コンテンツを整理できます。</p>
+
+<h3 id="パーマリンク">パーマリンク</h3>
+
+<p><code class="language-plaintext highlighter-rouge">_config.yml</code> でパーマリンクの形式をカスタマイズできます：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">permalink</span><span class="pi">:</span> <span class="s">/:year/:month/:day/:title/</span>
+</code></pre></div></div>
+
+<h3 id="seo対策">SEO対策</h3>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll-seo-tag</code> プラグインを使用すると、メタタグが自動的に生成されます。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>Jekyllは学習コストが低く、すぐに技術ブログを始められます。Markdownで記事を書くだけなので、コンテンツ作成に集中できるのが魅力です。</p>
+
+<p>次回は、カスタムテーマの作り方について解説します。</p>
+
+<h2 id="参考リンク">参考リンク</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/">Jekyll公式ドキュメント</a></li>
+  <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+  <li><a href="https://www.markdownguide.org/">Markdown記法</a></li>
+</ul>
+
+    </div>
+
+    <footer class="post-footer">
+        
+            <div class="post-tags">
+                <strong>Tags:</strong>
+                
+                    <span class="tag">Jekyll</span>
+                
+                    <span class="tag">GitHub Pages</span>
+                
+                    <span class="tag">ブログ</span>
+                
+            </div>
+        
+    </footer>
+</article>
+
+
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 n-has3. All rights reserved.</p>
+            <p>技術メモとナレッジベース</p>
+        </div>
+    </footer>
+</body>
+</html>
