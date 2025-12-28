@@ -120,11 +120,23 @@ body {
     border-radius: 8px;
     box-shadow: var(--shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
 
 .post-item:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.post-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.post-item > * {
+    position: relative;
+    z-index: 2;
 }
 
 .post-item h3 {
@@ -139,6 +151,12 @@ body {
 
 .post-item h3 a:hover {
     color: var(--secondary-color);
+}
+
+/* Make entire post card clickable */
+/* Ensure card overlay does not override inner link styling */
+.post-card a {
+    text-decoration: none;
 }
 
 .post-meta {
@@ -1130,6 +1148,42 @@ body {
 .post-tags-inline .tag .chip:hover {
     background: var(--chip-accent-bg);
     color: var(--chip-accent-color);
+}
+
+/* Filter chips for tags/categories selection pages */
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 20px;
+}
+
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--chip-bg);
+    color: var(--chip-color);
+    border: 1px solid rgba(23,50,68,0.08);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+    background: var(--chip-accent-bg);
+    color: var(--chip-accent-color);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.filter-chip.is-active {
+    background: var(--secondary-color);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-lg);
 }
 
 
