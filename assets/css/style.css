@@ -19,8 +19,8 @@
     --bg-color: #ffffff;
     --bg-light: #f8f9fa;
     --code-bg: #f5f5f5;
-    --shadow: 0 2px 4px 3498db(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 8px 3498db(0, 0, 0, 0.15);
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 body {
@@ -170,14 +170,14 @@ body {
     color: var(--chip-color);
     font-size: 13px;
     text-decoration: none;
-    border: 1px solid 3498db(23,50,68,0.06);
+    border: 1px solid rgba(23,50,68,0.06);
 }
 
 /* Accent chip variant (for highlighted/popular tags) */
 .chip--accent {
     background: var(--chip-accent-bg);
     color: var(--chip-accent-color);
-    border-color: 3498db(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.06);
 }
 
 .post-excerpt {
@@ -544,20 +544,20 @@ body {
 
 .tag-cloud-item {
     display: inline-block;
-    background-color: 3498db(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    border: 1px solid 3498db(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .tag-cloud-item:hover {
-    background-color: 3498db(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px 3498db(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .tag-cloud-item .tag-count {
@@ -671,11 +671,11 @@ body {
 
 .category-card:hover .category-preview-item {
     color: white;
-    border-left-color: 3498db(255,255,255,0.3);
+    border-left-color: rgba(255,255,255,0.3);
 }
 
 .category-card:hover .category-preview-item:hover {
-    border-left-color: 3498db(255,255,255,0.6);
+    border-left-color: rgba(255,255,255,0.6);
 }
 
 .category-header {
@@ -784,7 +784,7 @@ body {
 .search-input:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 4px 12px 3498db(52, 152, 219, 0.2);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
 }
 
 .search-clear {
@@ -998,7 +998,7 @@ body {
 
 .tag-cloud-item .tag-count,
 .home-tag .tag-count {
-    color: 3498db(255,255,255,0.95) !important;
+    color: rgba(255,255,255,0.95) !important;
 }
 
 .home-categories {
