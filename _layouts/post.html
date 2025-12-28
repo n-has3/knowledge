@@ -31,7 +31,7 @@ layout: default
             <div class="post-tags">
                 <strong>Tags:</strong>
                 {% for tag in page.tags %}
-                    <span class="tag"><a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="chip">{{ tag }}</a></span>
+                    <span class="tag"><span class="chip">{{ tag }}</span></span>
                 {% endfor %}
             </div>
         {% endif %}
