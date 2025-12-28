@@ -10,6 +10,17 @@
     --secondary-color: #3498db;
     --chip-bg: #f1f5f8;
     --chip-color: #173244;
+    --chip-accent-bg: var(--secondary-color);
+    --chip-accent-color: #ffffff;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --bg-color: #ffffff;
+    --bg-light: #f8f9fa;
+    --code-bg: #f5f5f5;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* タグページ: シンプルなチップスタイルに変更 */
@@ -40,44 +51,44 @@
 
 .tag-cloud-item {
     text-decoration: none;
-    }
+}
 
-    .tag-cloud-item .chip,
-    .tag-cloud-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 12px;
-        border-radius: 999px;
-        background: var(--chip-bg);
-        color: var(--chip-color);
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        border: 1px solid rgba(23,50,68,0.06);
-        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
+.tag-cloud-item .chip,
+.tag-cloud-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--chip-bg);
+    color: var(--chip-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(23,50,68,0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
 
-    .tag-cloud-item .tag-count {
-        margin-left: 8px;
-        font-size: 12px;
-        opacity: 0.75;
-        font-weight: 700;
-        color: var(--text-light);
-    }
+.tag-cloud-item .tag-count {
+    margin-left: 8px;
+    font-size: 12px;
+    opacity: 0.75;
+    font-weight: 700;
+    color: var(--text-light);
+}
 
-    .tag-cloud-item:hover .chip,
-    .tag-cloud-item:hover {
-        background: var(--chip-accent-bg);
-        color: var(--chip-accent-color);
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lg);
-    }
+.tag-cloud-item:hover .chip,
+.tag-cloud-item:hover {
+    background: var(--chip-accent-bg);
+    color: var(--chip-accent-color);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
 
-    .tags-list {
-        max-width: 900px;
-        margin: 0 auto;
-    }
+.tags-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
     .tag-section {
         margin-bottom: 40px;
