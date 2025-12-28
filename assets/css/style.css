@@ -1084,6 +1084,27 @@ body {
     color: var(--chip-accent-color);
 }
 
+/* Make tag-related chips blue with white text by default for better contrast */
+.post-tags-inline .chip,
+.tag-cloud-item .chip,
+.home-tag .chip,
+.tags-list .chip,
+.tags-cloud .chip,
+.tag-posts .chip,
+.categories-list .chip {
+    background: var(--secondary-color) !important;
+    color: var(--chip-accent-color) !important;
+    border-color: transparent !important;
+}
+
+/* Keep hover effect subtle */
+.post-tags-inline .chip:hover,
+.tag-cloud-item .chip:hover,
+.home-tag .chip:hover {
+    filter: brightness(0.95);
+    transform: translateY(-2px);
+}
+
 .post-categories a.category {
     text-decoration: none;
     transition: all 0.3s ease;
