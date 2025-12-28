@@ -13,7 +13,7 @@ echo "📍 現在のブランチ: $CURRENT_BRANCH"
 
 # ビルド
 echo ""
-./build.sh
+./scripts/build.sh
 
 # Gitの状態確認
 echo ""

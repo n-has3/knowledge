@@ -46,7 +46,7 @@ bundle exec jekyll serve
 
 ```bash
 # ビルドスクリプトを実行
-./build.sh
+./scripts/build.sh
 
 # 静的ファイルが docs/ ディレクトリに生成されます
 ```
@@ -79,22 +79,26 @@ bundle exec jekyll serve
 │   │   └── style.css    # スタイルシート
 │   └── js/
 │       └── search.js    # 検索機能
+├── _pages/              # ページファイル（Markdown & HTML）
+│   ├── about.md         # Aboutページ
+│   ├── archive.md       # アーカイブページ
+│   ├── categories.html  # カテゴリリダイレクト
+│   ├── retrospective.md # 振り返りページ
+│   ├── search.md        # 検索ページ
+│   ├── tags.md          # タグページ
+│   ├── tech-memo.md     # 技術メモページ
+│   └── test-interactions.md  # テストページ
+├── _templates/          # 新規記事テンプレート
 ├── docs/                # ビルド済み静的ファイル（GitHub Pages公開用）
 ├── img/                 # 画像アセット
-├── template/            # 新規記事テンプレート
-├── build.sh             # ビルドスクリプト
-├── deploy.sh            # デプロイスクリプト
+├── scripts/             # ビルド・デプロイスクリプト
+│   ├── build.sh         # ビルドスクリプト
+│   └── deploy.sh        # デプロイスクリプト
 ├── Gemfile              # Ruby依存の定義
 ├── Gemfile.lock         # 依存関係のロックファイル
 ├── .nojekyll            # GitHub PagesでJekyllビルドを無効化
-├── about.md             # Aboutページ
-├── archive.md           # アーカイブページ
-├── tags.md              # タグページ
-├── search.md            # 検索ページ
 ├── search.json          # 検索インデックス
 ├── index.md             # トップページ
-├── retrospective.md     # 振り返りページ
-├── tech-memo.md         # 技術メモページ
 ```
 
 ## ✍️ 記事の書き方

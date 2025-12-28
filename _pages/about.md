@@ -6,7 +6,7 @@ permalink: /about/
 このブログは、個人的なメモや振り返りを備考としてまとめています。
 
 ## 管理者
-![Profile Image](img/nmin.png)
+![Profile Image]({{ '/img/nmin.png' | relative_url }})
 
 ### 名前
 nmin

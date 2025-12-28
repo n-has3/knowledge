@@ -10,21 +10,21 @@
 }
 
 :root {
-    --bg: #0d1324;
-    --bg-soft: #111a2f;
-    --card: #121a30;
+    --bg: #0c1322;
+    --bg-soft: #0f182b;
+    --card: #111a2d;
     --card-strong: #0b1530;
-    --bg-color: #121a30;
-    --bg-light: #111a2f;
-    --primary-color: #f4f7fb;
+    --bg-color: #111a2d;
+    --bg-light: #0f182b;
+    --primary-color: #f7f9ff;
     --secondary-color: #7cc4ff;
     --accent-color: #f5b74c;
-    --text-color: #eef3ff;
-    --text-muted: #c5d0e6;
-    --text-light: #c5d0e6;
-    --border-color: rgba(255, 255, 255, 0.16);
-    --chip-bg: rgba(255, 255, 255, 0.1);
-    --chip-color: #eef3ff;
+    --text-color: #f7f9ff;
+    --text-muted: #d2dcf1;
+    --text-light: #d2dcf1;
+    --border-color: rgba(255, 255, 255, 0.18);
+    --chip-bg: rgba(255, 255, 255, 0.12);
+    --chip-color: #f7f9ff;
     --chip-accent-bg: #7cc4ff;
     --chip-accent-color: #0b1221;
     --code-bg: #0f1c34;
@@ -100,7 +100,7 @@ body::before {
 
 .site-nav a {
     position: relative;
-    color: var(--text-muted);
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -130,6 +130,18 @@ body::before {
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after {
     transform: scaleX(1);
+}
+
+.site-nav .search-icon-link {
+    order: 999;
+    font-size: 20px;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.site-nav .search-icon-link::after {
+    display: none;
 }
 
 /* メインコンテンツ */
@@ -226,12 +238,13 @@ body::before {
 .btn i { font-size: 18px; }
 
 .btn-primary {
-    background: linear-gradient(120deg, var(--secondary-color), #7dd3fc);
-    color: #0b1221;
-    box-shadow: var(--glow);
+    background: rgba(255,255,255,0.06);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
 }
 
-.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow); background: rgba(255,255,255,0.08); }
 
 .btn-ghost {
     background: rgba(255,255,255,0.04);
@@ -266,31 +279,35 @@ body::before {
 }
 
 .post-list {
-    margin: 0 auto;
+    margin: 0 auto 60px;
+    max-width: 920px;
 }
 
 .post-list .section-head {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
     grid-auto-rows: 1fr;
 }
 
+
 .post-item {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--card);
-    padding: 20px;
-    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0)), var(--card);
+    padding: 14px 16px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    min-height: 0;
 }
 
 .post-item::after {
@@ -330,21 +347,23 @@ body::before {
 .post-badge {
     display: inline-flex;
     align-items: center;
+    align-self: flex-start;
     gap: 6px;
-    padding: 6px 10px;
+    padding: 5px 10px;
     border-radius: 999px;
     background: rgba(96,165,250,0.12);
     color: var(--secondary-color);
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11.5px;
     letter-spacing: 0.04em;
-    margin-bottom: 12px;
 }
 
 .post-item h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
-    line-height: 1.3;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.35;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .post-item h3 a {
@@ -362,14 +381,26 @@ body::before {
     text-decoration: none;
 }
 
+.post-meta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .post-meta {
     color: var(--text-muted);
-    font-size: 13px;
-    margin-bottom: 14px;
+    font-size: 12px;
+    margin: 0;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.post-categories-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .meta-block {
@@ -397,7 +428,7 @@ body::before {
     align-items: center;
     gap: 6px;
     margin: 0;
-    padding: 5px 10px;
+    padding: 3px 7px;
     border-radius: 999px;
     background: var(--chip-bg);
     color: var(--chip-color);
@@ -525,9 +556,12 @@ body::before {
     }
 
     .tag-post-item h3,
-    .category-post-item h3 {
+    .category-post-item h3,
+    .search-result-item h3 {
         font-size: 22px;
         margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .tag-post-item h3 a,
@@ -592,7 +626,8 @@ body::before {
 
 .post-excerpt {
     color: var(--text-color);
-    line-height: 1.7;
+    line-height: 1.45;
+    font-size: 13px;
 }
 
 /* 記事ページ */
@@ -1118,11 +1153,17 @@ body::before {
     width: 100%;
     padding: 18px 50px 18px 20px;
     font-size: 18px;
+    color: var(--text-color);
     border: 2px solid var(--border-color);
     border-radius: 50px;
     background-color: var(--bg-color);
     transition: all 0.3s ease;
     box-shadow: var(--shadow);
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
 }
 
 .search-input:focus {
@@ -1168,47 +1209,49 @@ body::before {
 }
 
 .filter-group label {
-    font-weight: 600;
-    color: var(--primary-color);
+    font-weight: 700;
+    color: var(--text-color);
 }
 
 .filter-select {
-    padding: 8px 15px;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--bg-light);
+    padding: 9px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--card);
+    color: var(--text-color);
     font-size: 14px;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .filter-select:focus {
     outline: none;
     border-color: var(--secondary-color);
+    background-color: var(--card-strong);
 }
 
 .reset-button {
-    padding: 8px 18px;
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
+    padding: 9px 18px;
+    background: rgba(255,255,255,0.08);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    transition: all 0.2s ease;
     margin-left: auto;
 }
 
 .reset-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
+    background-color: rgba(255,255,255,0.12);
+    transform: translateY(-1px);
     box-shadow: var(--shadow);
 }
 
 .search-stats {
     padding: 15px 20px;
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    color: white;
+    color: rgb(0, 0, 71);
     border-radius: 8px;
     margin-bottom: 25px;
     font-weight: 600;
@@ -1485,6 +1528,26 @@ body::before {
     transform: translateY(-2px);
 }
 
+/* Post excerpt styling */
+.post-excerpt {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-excerpt p {
+    margin: 0;
+}
+
+/* Post tags inline styling */
+.post-tags-inline {
+    margin: 0;
+    gap: 6px;
+}
 .post-categories a.category {
     text-decoration: none;
     transition: all 0.3s ease;
@@ -1517,6 +1580,24 @@ body::before {
 
 .site-footer a:hover {
     text-decoration: underline;
+}
+
+.footer-rss {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.footer-rss a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.footer-rss a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 /* レスポンシブ: ヘッダー/ホーム/カード */

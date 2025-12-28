@@ -86,23 +86,25 @@
             html += `
                 <article class="search-result-item clickable-card" data-href="${post.url}" role="link" tabindex="0" aria-label="${escapeAttr(post.title)}">
                     <h3><a href="${post.url}">${title}</a></h3>
-                    <div class="post-meta">
-                        <time>${post.date}</time>
+                    <div class="post-meta-row">
+                        <div class="post-meta">
+                            <time>${post.date}</time>
+                        </div>
                         ${post.categories.length > 0 ? `
-                            <span class="post-categories">
+                            <div class="post-categories-inline">
                                 ${post.categories.map(cat => {
                                     const slug = cat.toLowerCase() === '技術メモ' ? '技術メモ' : cat.toLowerCase() === '振り返り' ? '振り返り' : cat;
                                     const base = cat === '技術メモ' ? '/knowledge/tech-memo' : cat === '振り返り' ? '/knowledge/retrospective' : '/knowledge/archive';
                                     return `<a class="category" href="${base}#${slug}">${cat}</a>`;
                                 }).join('')}
-                            </span>
-                        ` : ''}
-                        ${post.tags.length > 0 ? `
-                            <span class="post-tags">
-                                ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </span>
+                            </div>
                         ` : ''}
                     </div>
+                    ${post.tags.length > 0 ? `
+                        <div class="post-tags-inline">
+                            ${post.tags.map(tag => `<span class="tag"><a class="chip" href="/knowledge/tags#${tag.toLowerCase()}">${tag}</a></span>`).join('')}
+                        </div>
+                    ` : ''}
                     <div class="post-excerpt">${excerpt}</div>
                 </article>
             `;

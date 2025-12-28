@@ -36,27 +36,29 @@ layout: default
                         {% if first_cat %}{{ first_cat }}{% else %}Note{% endif %}
                     </div>
                     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                    <p class="post-meta">
-                        <span class="meta-block"><i class="ri-calendar-2-line"></i>
-                            <time datetime="{{ post.date | date_to_xmlschema }}">
-                                {{ post.date | date: site.date_format }}
-                            </time>
-                        </span>
-                        {% if post.categories.size > 0 %}
-                            <span class="post-categories">
-                                    {% for category in post.categories %}
-                                        {% assign cat_slug = category | slugify %}
-                                        {% assign cat_path = '/archive' %}
-                                        {% if category == '技術メモ' %}
-                                            {% assign cat_path = '/tech-memo' %}
-                                        {% elsif category == '振り返り' %}
-                                            {% assign cat_path = '/retrospective' %}
-                                        {% endif %}
-                                        <a href="{{ cat_path | relative_url }}#{{ cat_slug }}" class="category"><i class="ri-folder-2-line"></i>{{ category }}</a>
-                                    {% endfor %}
+                    <div class="post-meta-row">
+                        <p class="post-meta">
+                            <span class="meta-block"><i class="ri-calendar-2-line"></i>
+                                <time datetime="{{ post.date | date_to_xmlschema }}">
+                                    {{ post.date | date: site.date_format }}
+                                </time>
                             </span>
+                        </p>
+                        {% if post.categories.size > 0 %}
+                            <div class="post-categories-inline">
+                                {% for category in post.categories %}
+                                    {% assign cat_slug = category | slugify %}
+                                    {% assign cat_path = '/archive' %}
+                                    {% if category == '技術メモ' %}
+                                        {% assign cat_path = '/tech-memo' %}
+                                    {% elsif category == '振り返り' %}
+                                        {% assign cat_path = '/retrospective' %}
+                                    {% endif %}
+                                    <a href="{{ cat_path | relative_url }}#{{ cat_slug }}" class="category"><i class="ri-folder-2-line"></i>{{ category }}</a>
+                                {% endfor %}
+                            </div>
                         {% endif %}
-                    </p>
+                    </div>
                     {% if post.excerpt %}
                         <div class="post-excerpt">
                             {{ post.excerpt }}

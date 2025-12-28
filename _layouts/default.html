@@ -22,9 +22,9 @@
                 <a href="{{ '/tech-memo' | relative_url }}">技術メモ</a>
                 <a href="{{ '/retrospective' | relative_url }}">振り返り</a>
                 <a href="{{ '/tags' | relative_url }}">Tags</a>
-                <a href="{{ '/search' | relative_url }}">Search</a>
                 <a href="{{ '/archive' | relative_url }}">Archive</a>
                 <a href="{{ '/about' | relative_url }}">About</a>
+                <a href="{{ '/search' | relative_url }}" class="search-icon-link" title="Search"><i class="ri-search-line"></i></a>
             </nav>
         </div>
     </header>
@@ -39,6 +39,7 @@
         <div class="wrapper">
             <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. All rights reserved.</p>
             <p>{{ site.description }}</p>
+            <p class="footer-rss"><a href="{{ '/feed.xml' | relative_url }}" target="_blank"><i class="ri-rss-fill"></i> RSS Feed</a></p>
         </div>
     </footer>
 
