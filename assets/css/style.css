@@ -955,7 +955,7 @@ body {
 .home-tag {
     display: inline-block;
     background-color: var(--secondary-color);
-    color: white;
+    color: white !important;
     padding: 6px 14px;
     border-radius: 20px;
     text-decoration: none;
@@ -972,6 +972,17 @@ body {
 .home-tag .tag-count {
     opacity: 0.8;
     font-size: 0.9em;
+}
+
+/* Ensure high contrast for tag cloud items */
+.tag-cloud-item,
+.home-tag {
+    color: #fff !important;
+}
+
+.tag-cloud-item .tag-count,
+.home-tag .tag-count {
+    color: rgba(255,255,255,0.95) !important;
 }
 
 .home-categories {
