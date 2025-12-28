@@ -23,6 +23,142 @@
     --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+.site-header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.site-title:hover {
+    color: var(--secondary-color);
+}
+
+.site-nav {
+    float: right;
+    line-height: 32px;
+}
+
+.site-nav a {
+    margin-left: 25px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* メインコンテンツ */
+.page-content {
+    padding: 40px 0;
+    min-height: calc(100vh - 250px);
+}
+
+/* ホームページ */
+.home-header {
+    text-align: center;
+    padding: 40px 0 60px;
+}
+
+.home-header h1 {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.home-description {
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+.post-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-list h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.post-item {
+    background-color: var(--bg-color);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.post-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-item h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.post-item h3 a:hover {
+    color: var(--secondary-color);
+}
+
+.post-meta {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.post-categories,
+.post-tags {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.category,
+.tag {
+    display: inline-block;
+    margin-right: 5px;
+}
+
 /* タグページ: シンプルなチップスタイルに変更 */
 .tags-cloud {
     background-color: var(--bg-color);
@@ -1022,6 +1158,80 @@
     background-color: var(--primary-color);
     color: white;
     transform: translateY(-2px);
+}
+
+/* フッター */
+.site-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: 8px;
+}
+
+.site-footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* レスポンシブ: ヘッダー/ホーム/カード */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+
+    .site-title {
+        font-size: 20px;
+    }
+
+    .site-nav {
+        float: none;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .site-nav a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .home-header h1 {
+        font-size: 32px;
+    }
+
+    .home-description {
+        font-size: 16px;
+    }
+
+    .post,
+    .page {
+        padding: 25px 20px;
+    }
+
+    .post-title {
+        font-size: 28px;
+    }
+
+    .post-content,
+    .page-content {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-next {
+        text-align: left;
+    }
 }
 
 /* レスポンシブ対応 */
