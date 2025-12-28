@@ -79,7 +79,7 @@ bundle exec jekyll serve
 │   │   └── style.css    # スタイルシート
 │   └── js/
 │       └── search.js    # 検索機能
-├── _pages/              # ページファイル（Markdown & HTML）
+├── pages/               # ページファイル(Markdown & HTML)
 │   ├── about.md         # Aboutページ
 │   ├── archive.md       # アーカイブページ
 │   ├── categories.html  # カテゴリリダイレクト

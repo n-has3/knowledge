@@ -36,13 +36,6 @@ date_format: "%Y年%m月%d日"
 collections:
   posts:
     output: true
-  pages:
-    output: true
-    permalink: /:path/
-
-# インクルード設定
-include:
-  - _pages
 
 # 除外ファイル
 exclude:
