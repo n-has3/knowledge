@@ -8,6 +8,10 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
+    --chip-bg: #f1f5f8;
+    --chip-color: #173244;
+    --chip-accent-bg: var(--secondary-color);
+    --chip-accent-color: #ffffff;
     --accent-color: #e74c3c;
     --text-color: #333;
     --text-light: #666;
@@ -152,16 +156,28 @@ body {
 .category,
 .tag {
     display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 3px 10px;
-    border-radius: 3px;
-    font-size: 12px;
     margin-right: 5px;
 }
 
-.tag {
-    background-color: var(--text-light);
+/* Generic chip component for tags/categories */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--chip-bg);
+    color: var(--chip-color);
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid rgba(23,50,68,0.06);
+}
+
+/* Accent chip variant (for highlighted/popular tags) */
+.chip--accent {
+    background: var(--chip-accent-bg);
+    color: var(--chip-accent-color);
+    border-color: rgba(255,255,255,0.06);
 }
 
 .post-excerpt {
@@ -1055,19 +1071,17 @@ body {
 }
 
 .post-tags-inline .tag {
-    background-color: var(--text-light);
-    color: var(--text-color);
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    /* use chip component styles */
+    padding: 0; /* reset, chip handles padding */
 }
 
-.post-tags-inline .tag:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-    color: white;
+.post-tags-inline .tag .chip {
+    padding: 4px 10px;
+}
+
+.post-tags-inline .tag .chip:hover {
+    background: var(--chip-accent-bg);
+    color: var(--chip-accent-color);
 }
 
 .post-categories a.category {

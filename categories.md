@@ -53,7 +53,7 @@ permalink: /categories/
               {% if post.tags.size > 0 %}
                 <span class="post-tags">
                   {% for tag in post.tags %}
-                    <span class="tag">{{ tag }}</span>
+                    <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="chip">{{ tag }}</a>
                   {% endfor %}
                 </span>
               {% endif %}

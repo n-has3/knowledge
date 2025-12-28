@@ -6,14 +6,12 @@ permalink: /tags/
 
 <div class="tags-cloud">
   <h2>タグクラウド</h2>
-  <div class="tag-cloud-items">
+    <div class="tag-cloud-items">
     {% assign sorted_tags = site.tags | sort %}
     {% for tag in sorted_tags %}
       {% assign tag_name = tag[0] %}
       {% assign tag_posts = tag[1] %}
-      <a href="#{{ tag_name | slugify }}" class="tag-cloud-item" data-count="{{ tag_posts.size }}">
-        {{ tag_name }} <span class="tag-count">({{ tag_posts.size }})</span>
-      </a>
+      <a href="#{{ tag_name | slugify }}" class="tag-cloud-item"><span class="chip">{{ tag_name }} <span class="tag-count">({{ tag_posts.size }})</span></span></a>
     {% endfor %}
   </div>
 </div>
