@@ -1271,3 +1271,21 @@ body {
     }
 }
 
+
+/* ---------------------------------------------------------------------------
+   Force-disable color changes on hover for category elements
+   This ensures hover/background changes won't make text unreadable.
+---------------------------------------------------------------------------- */
+.category-name,
+.category-name a,
+.category-card .category-name a,
+.home-category .category-name,
+.category-preview-item,
+.category-preview-item a,
+.home-category:hover .category-name,
+.category-card:hover .category-name a,
+.category-preview-item:hover {
+    color: var(--primary-color) !important;
+    transition: none !important;
+}
+
