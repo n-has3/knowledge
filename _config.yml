@@ -1,8 +1,7 @@
 # サイト設定
-title: Tech Knowledge Base
-description: 技術メモとナレッジベース
+title: nmin Knowledge Base
+description: nminの雑なメモ帳
 author: n-has3
-email: your-email@example.com
 url: "https://n-has3.github.io"
 baseurl: "/knowledge"
 

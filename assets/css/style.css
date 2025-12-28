@@ -705,8 +705,9 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+/* Keep category name color unchanged on card hover to maintain contrast */
 .category-card:hover .category-name a {
-    color: white;
+    color: var(--primary-color);
 }
 
 .category-card:hover .category-count {
@@ -737,8 +738,9 @@ body {
     font-weight: 600;
 }
 
+/* Do not change category name color on hover */
 .category-name a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .category-count {
@@ -765,8 +767,8 @@ body {
     transition: all 0.2s ease;
 }
 
+/* Keep preview item text color unchanged on hover; only adjust border and spacing */
 .category-preview-item:hover {
-    color: var(--secondary-color);
     border-left-color: var(--secondary-color);
     padding-left: 16px;
 }
@@ -1070,8 +1072,9 @@ body {
     box-shadow: var(--shadow);
 }
 
+/* Keep home category name readable by preserving its color on hover */
 .home-category:hover .category-name {
-    color: white;
+    color: var(--primary-color);
 }
 
 .home-category:hover .category-count {
