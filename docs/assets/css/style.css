@@ -1,3 +1,7 @@
+.site-nav a {
+    color: var(--text-muted);
+}
+
 /* リセットとベース設定 */
 * {
     margin: 0;
@@ -6,27 +10,27 @@
 }
 
 :root {
-    --bg: #0b1221;
-    --bg-soft: #0f172a;
-    --card: #111827;
+    --bg: #0d1324;
+    --bg-soft: #111a2f;
+    --card: #121a30;
     --card-strong: #0b1530;
-    --bg-color: #111827;
-    --bg-light: #0f172a;
-    --primary-color: #e5e7eb;
-    --secondary-color: #60a5fa;
-    --accent-color: #f59e0b;
-    --text-color: #e5e7eb;
-    --text-muted: #9ca3af;
-    --text-light: #9ca3af;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --chip-bg: rgba(255, 255, 255, 0.06);
-    --chip-color: #e5e7eb;
-    --chip-accent-bg: #60a5fa;
+    --bg-color: #121a30;
+    --bg-light: #111a2f;
+    --primary-color: #f4f7fb;
+    --secondary-color: #7cc4ff;
+    --accent-color: #f5b74c;
+    --text-color: #eef3ff;
+    --text-muted: #c5d0e6;
+    --text-light: #c5d0e6;
+    --border-color: rgba(255, 255, 255, 0.16);
+    --chip-bg: rgba(255, 255, 255, 0.1);
+    --chip-color: #eef3ff;
+    --chip-accent-bg: #7cc4ff;
     --chip-accent-color: #0b1221;
-    --code-bg: #0e1628;
-    --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    --code-bg: #0f1c34;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.32);
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
-    --glow: 0 0 0 1px rgba(96, 165, 250, 0.15), 0 15px 50px rgba(96, 165, 250, 0.15);
+    --glow: 0 0 0 1px rgba(124, 196, 255, 0.16), 0 15px 50px rgba(124, 196, 255, 0.18);
 }
 
 body {
@@ -272,18 +276,21 @@ body::before {
 .post-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 16px;
+    grid-auto-rows: 1fr;
 }
 
 .post-item {
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--card);
-    padding: 24px;
+    padding: 20px;
     border-radius: 16px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-item::after {
@@ -584,7 +591,7 @@ body::before {
 }
 
 .post-excerpt {
-    color: var(--text-muted);
+    color: var(--text-color);
     line-height: 1.7;
 }
 
@@ -1312,11 +1319,11 @@ body::before {
     gap: 6px;
     background: var(--chip-bg);
     color: var(--chip-color) !important;
-    padding: 6px 14px;
+    padding: 7px 14px;
     border-radius: 999px;
     text-decoration: none;
     font-size: 14px;
-    transition: all 0.2s ease;
+    transition: all 0.18s ease;
     border: 1px solid var(--border-color);
 }
 
