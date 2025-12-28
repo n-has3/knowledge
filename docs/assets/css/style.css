@@ -644,6 +644,24 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.category-card:hover .category-name a {
+    color: white;
+}
+
+.category-card:hover .category-count {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.category-card:hover .category-preview-item {
+    color: white;
+    border-left-color: rgba(255,255,255,0.3);
+}
+
+.category-card:hover .category-preview-item:hover {
+    border-left-color: rgba(255,255,255,0.6);
+}
+
 .category-header {
     display: flex;
     justify-content: space-between;
@@ -1047,6 +1065,7 @@ body {
 
 .post-categories a.category:hover {
     background-color: var(--primary-color);
+    color: white;
     transform: translateY(-2px);
 }
 
