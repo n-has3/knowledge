@@ -549,15 +549,37 @@ body {
     transition: transform 0.2s ease;
 }
 
+.archive-item {
+    background-color: var(--bg-color);
+    padding: 18px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    cursor: pointer;
+}
+
 .archive-item:hover {
     transform: translateX(5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.archive-item:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 4px;
+    box-shadow: var(--shadow-lg);
+}
+
+.archive-title {
+    margin: 0 0 6px;
+    font-size: 20px;
 }
 
 .archive-item a {
     text-decoration: none;
     color: var(--primary-color);
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .archive-item a:hover {
@@ -567,7 +589,7 @@ body {
 .archive-date {
     color: var(--text-light);
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 /* タグページ: シンプルなチップスタイル */

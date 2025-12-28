@@ -10,15 +10,15 @@ permalink: /archive/
   <div class="year-section">
     <h2>{{ year.name }}</h2>
     {% for post in year.items %}
-      <div class="archive-item">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <article class="archive-item clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="{{ post.title | escape }}">
+        <h3 class="archive-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <div class="archive-date">
           {{ post.date | date: site.date_format }}
           {% if post.categories.size > 0 %}
             - {{ post.categories | join: ", " }}
           {% endif %}
         </div>
-      </div>
+      </article>
     {% endfor %}
   </div>
 {% endfor %}
