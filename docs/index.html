@@ -52,8 +52,7 @@
         <h2>最新の記事</h2>
         
             
-                <article class="post-item post-card">
-                    <a class="post-card__overlay" href="/knowledge/2025/12/28/demo/" aria-label="demo"></a>
+                <article class="post-item post-card" data-href="/knowledge/2025/12/28/demo/">
                     <h3><a href="/knowledge/2025/12/28/demo/">demo</a></h3>
                     <p class="post-meta">
                         <time datetime="2025-12-28T00:00:00+09:00">
@@ -91,6 +90,21 @@
             
         
     </div>
+
+        <script>
+        (function() {
+            var cards = document.querySelectorAll('.post-card');
+            cards.forEach(function(card) {
+                card.addEventListener('click', function(e) {
+                    if (e.target.closest('a, button')) return;
+                    var href = card.dataset.href;
+                    if (href) {
+                        window.location = href;
+                    }
+                });
+            });
+        })();
+        </script>
 
     <!-- カテゴリセクション -->
     <div class="home-categories-section">

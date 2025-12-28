@@ -128,15 +128,8 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-.post-card__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-}
-
-.post-item > * {
-    position: relative;
-    z-index: 2;
+.post-card {
+    cursor: pointer;
 }
 
 .post-item h3 {
