@@ -10,34 +10,36 @@
     --secondary-color: #3498db;
     --chip-bg: #f1f5f8;
     --chip-color: #173244;
-    /* タグページ: シンプルなチップスタイルに変更 */
-    .tags-cloud {
-        background-color: var(--bg-color);
-        padding: 32px;
-        border-radius: 12px;
-        margin-bottom: 40px;
-        color: var(--primary-color);
-        text-align: left;
-        border: 1px solid var(--border-color);
-        box-shadow: var(--shadow);
-    }
+}
 
-    .tags-cloud h2 {
-        color: var(--primary-color);
-        font-size: 28px;
-        margin-bottom: 18px;
-    }
+/* タグページ: シンプルなチップスタイルに変更 */
+.tags-cloud {
+    background-color: var(--bg-color);
+    padding: 32px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    text-align: left;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
 
-    .tag-cloud-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        justify-content: flex-start;
-    }
+.tags-cloud h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 18px;
+}
 
-    .tag-cloud-item {
-        text-decoration: none;
+.tag-cloud-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.tag-cloud-item {
+    text-decoration: none;
     }
 
     .tag-cloud-item .chip,
@@ -144,9 +146,7 @@
     .category-post-item h3 a:hover {
         color: var(--secondary-color);
     }
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+    
 
 .post-item h3 a {
     color: var(--primary-color);
