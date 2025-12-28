@@ -12,7 +12,7 @@ layout: default
         <h2>最新の記事</h2>
         {% if site.posts.size > 0 %}
             {% for post in site.posts %}
-                <article class="post-item post-card" data-href="{{ post.url | relative_url }}">
+                <article class="post-item post-card clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="{{ post.title | escape }}">
                     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                     <p class="post-meta">
                         <time datetime="{{ post.date | date_to_xmlschema }}">
@@ -44,21 +44,6 @@ layout: default
             <p>まだ記事がありません。</p>
         {% endif %}
     </div>
-
-        <script>
-        (function() {
-            var cards = document.querySelectorAll('.post-card');
-            cards.forEach(function(card) {
-                card.addEventListener('click', function(e) {
-                    if (e.target.closest('a, button')) return;
-                    var href = card.dataset.href;
-                    if (href) {
-                        window.location = href;
-                    }
-                });
-            });
-        })();
-        </script>
 
     <!-- カテゴリセクション -->
     <div class="home-categories-section">

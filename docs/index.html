@@ -54,7 +54,7 @@
         <h2>最新の記事</h2>
         
             
-                <article class="post-item post-card" data-href="/knowledge/2025/12/28/test/">
+                <article class="post-item post-card clickable-card" data-href="/knowledge/2025/12/28/test/" role="link" tabindex="0" aria-label="test">
                     <h3><a href="/knowledge/2025/12/28/test/">test</a></h3>
                     <p class="post-meta">
                         <time datetime="2025-12-28T00:00:00+09:00">
@@ -80,21 +80,6 @@
             
         
     </div>
-
-        <script>
-        (function() {
-            var cards = document.querySelectorAll('.post-card');
-            cards.forEach(function(card) {
-                card.addEventListener('click', function(e) {
-                    if (e.target.closest('a, button')) return;
-                    var href = card.dataset.href;
-                    if (href) {
-                        window.location = href;
-                    }
-                });
-            });
-        })();
-        </script>
 
     <!-- カテゴリセクション -->
     <div class="home-categories-section">
@@ -129,5 +114,68 @@
             <p>技術メモと振り返り</p>
         </div>
     </footer>
+
+    <script>
+    (function() {
+        function isInteractive(target) {
+            return target.closest('a, button, input, textarea, select, option');
+        }
+
+        function navigate(card) {
+            var href = card && card.dataset && card.dataset.href;
+            if (!href) return;
+            window.location.href = href;
+        }
+
+        function bindCard(card) {
+            if (!card || card.dataset.clickBound) return;
+            card.dataset.clickBound = 'true';
+
+            card.addEventListener('click', function(event) {
+                if (isInteractive(event.target)) return;
+                navigate(card);
+            });
+
+            card.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    navigate(card);
+                }
+            });
+        }
+
+        function initClickableCards() {
+            var cards = document.querySelectorAll('.clickable-card[data-href]');
+            cards.forEach(bindCard);
+
+            if (window.MutationObserver && !initClickableCards.observer) {
+                initClickableCards.observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (!node || node.nodeType !== 1) return;
+                            if (node.matches && node.matches('.clickable-card[data-href]')) {
+                                bindCard(node);
+                            }
+                            if (node.querySelectorAll) {
+                                node.querySelectorAll('.clickable-card[data-href]').forEach(bindCard);
+                            }
+                        });
+                    });
+                });
+
+                initClickableCards.observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initClickableCards);
+        } else {
+            initClickableCards();
+        }
+    })();
+    </script>
 </body>
 </html>

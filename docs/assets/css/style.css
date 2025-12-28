@@ -132,6 +132,17 @@ body {
     cursor: pointer;
 }
 
+.clickable-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.clickable-card:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 4px;
+    box-shadow: var(--shadow-lg);
+}
+
 .post-item h3 {
     font-size: 24px;
     margin-bottom: 10px;

@@ -53,6 +53,14 @@
         displayResults();
         updateStats(query, selectedCategory, selectedTag);
     }
+
+    function escapeAttr(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
     
     // 検索結果の表示
     function displayResults() {
@@ -76,7 +84,7 @@
             }
             
             html += `
-                <article class="search-result-item">
+                <article class="search-result-item clickable-card" data-href="${post.url}" role="link" tabindex="0" aria-label="${escapeAttr(post.title)}">
                     <h3><a href="${post.url}">${title}</a></h3>
                     <div class="post-meta">
                         <time>${post.date}</time>
