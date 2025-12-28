@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<article class="home">
+    <div class="home-header">
+        <h1>{{ site.title }}</h1>
+        <p class="home-description">{{ site.description }}</p>
+    </div>
+
+    <div class="post-list">
+        <h2>最新の記事</h2>
+        {% if site.posts.size > 0 %}
+            {% for post in site.posts %}
+                <article class="post-item">
+                    <h3>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="post-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: site.date_format }}
+                        </time>
+                        {% if post.categories.size > 0 %}
+                            <span class="post-categories">
+                                {% for category in post.categories %}
+                                    <span class="category">{{ category }}</span>
+                                {% endfor %}
+                            </span>
+                        {% endif %}
+                    </p>
+                    {% if post.excerpt %}
+                        <div class="post-excerpt">
+                            {{ post.excerpt }}
+                        </div>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        {% else %}
+            <p>まだ記事がありません。</p>
+        {% endif %}
+    </div>
+</article>

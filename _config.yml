@@ -1,0 +1,44 @@
+# サイト設定
+title: Tech Knowledge Base
+description: 技術メモとナレッジベース
+author: n-has3
+email: your-email@example.com
+url: "https://n-has3.github.io"
+baseurl: "/knowledge"
+
+# ビルド設定
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# パーマリンク設定
+permalink: /:year/:month/:day/:title/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "n-has3"
+
+# 表示設定
+show_excerpts: true
+date_format: "%Y年%m月%d日"
+
+# コレクション設定
+collections:
+  posts:
+    output: true
+
+# 除外ファイル
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
