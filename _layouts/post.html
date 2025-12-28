@@ -6,11 +6,13 @@ layout: default
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
         <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">
-                {{ page.date | date: site.date_format }}
-            </time>
+            <span class="meta-block"><i class="ri-calendar-2-line"></i>
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: site.date_format }}
+                </time>
+            </span>
             {% if page.author %}
-                <span class="post-author">by {{ page.author }}</span>
+                <span class="meta-block"><i class="ri-user-3-line"></i>by {{ page.author }}</span>
             {% endif %}
             {% if page.categories.size > 0 %}
                 <span class="post-categories">
@@ -22,7 +24,7 @@ layout: default
                         {% elsif category == '振り返り' %}
                             {% assign cat_path = '/retrospective' %}
                         {% endif %}
-                        <a class="category" href="{{ cat_path | relative_url }}#{{ cat_slug }}">{{ category }}</a>
+                        <a class="category" href="{{ cat_path | relative_url }}#{{ cat_slug }}"><i class="ri-folder-2-line"></i>{{ category }}</a>
                     {% endfor %}
                 </span>
             {% endif %}

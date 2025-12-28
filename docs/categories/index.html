@@ -1,13 +1,14 @@
-<p>&lt;!DOCTYPE html&gt;</p>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=/knowledge/tech-memo" />
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=/knowledge/tech-memo">
   <script>
     (function() {
       var hash = window.location.hash.replace('#','');
       var target = '/knowledge/tech-memo';
-      if (hash === '振り返り' || hash === '振り返り') {
+      var retroSlug = '振り返り';
+      if (hash === '振り返り' || hash === retroSlug) {
         target = '/knowledge/retrospective';
       }
       if (hash) target += '#' + hash;

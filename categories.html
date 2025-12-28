@@ -13,7 +13,8 @@ robots: noindex
     (function() {
       var hash = window.location.hash.replace('#','');
       var target = '{{ '/tech-memo' | relative_url }}';
-      if (hash === '振り返り' || hash === '{{ '振り返り' | slugify }}') {
+      var retroSlug = '{{ '振り返り' | slugify }}';
+      if (hash === '振り返り' || hash === retroSlug) {
         target = '{{ '/retrospective' | relative_url }}';
       }
       if (hash) target += '#' + hash;
