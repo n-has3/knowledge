@@ -1,6 +1,7 @@
 # サイト設定
-title: nmin Knowledge Base
-description: nminの雑なメモ帳
+title: nmin knowledge base
+subtitle: 技術メモと振り返り
+description: 技術メモと振り返り
 author: n-has3
 url: "https://n-has3.github.io"
 baseurl: "/knowledge"
