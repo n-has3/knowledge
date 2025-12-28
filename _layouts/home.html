@@ -20,9 +20,16 @@ layout: default
                         </time>
                         {% if post.categories.size > 0 %}
                             <span class="post-categories">
-                                {% for category in post.categories %}
-                                    <a href="{{ '/categories' | relative_url }}#{{ category | slugify }}" class="category">{{ category }}</a>
-                                {% endfor %}
+                                    {% for category in post.categories %}
+                                        {% assign cat_slug = category | slugify %}
+                                        {% assign cat_path = '/archive' %}
+                                        {% if category == '技術メモ' %}
+                                            {% assign cat_path = '/tech-memo' %}
+                                        {% elsif category == '振り返り' %}
+                                            {% assign cat_path = '/retrospective' %}
+                                        {% endif %}
+                                        <a href="{{ cat_path | relative_url }}#{{ cat_slug }}" class="category">{{ category }}</a>
+                                    {% endfor %}
                             </span>
                         {% endif %}
                     </p>

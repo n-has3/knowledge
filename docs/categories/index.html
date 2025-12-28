@@ -1,162 +1,21 @@
-<!DOCTYPE html>
+<p>&lt;!DOCTYPE html&gt;</p>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories | nmin blog</title>
-    <meta name="description" content="技術メモと振り返り">
-    <link rel="stylesheet" href="/knowledge/assets/css/style.css">
-    <link type="application/atom+xml" rel="alternate" href="https://n-has3.github.io/knowledge/feed.xml" title="nmin blog" />
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Categories | nmin blog</title>
-<meta name="generator" content="Jekyll v3.9.5" />
-<meta property="og:title" content="Categories" />
-<meta name="author" content="n-has3" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="技術メモと振り返り" />
-<meta property="og:description" content="技術メモと振り返り" />
-<link rel="canonical" href="https://n-has3.github.io/knowledge/categories/" />
-<meta property="og:url" content="https://n-has3.github.io/knowledge/categories/" />
-<meta property="og:site_name" content="nmin blog" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Categories" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"n-has3"},"description":"技術メモと振り返り","headline":"Categories","url":"https://n-has3.github.io/knowledge/categories/"}</script>
-<!-- End Jekyll SEO tag -->
-
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=/knowledge/tech-memo" />
+  <script>
+    (function() {
+      var hash = window.location.hash.replace('#','');
+      var target = '/knowledge/tech-memo';
+      if (hash === '振り返り' || hash === '振り返り') {
+        target = '/knowledge/retrospective';
+      }
+      if (hash) target += '#' + hash;
+      window.location.replace(target);
+    })();
+  </script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="wrapper">
-            <a class="site-title" href="/knowledge/">nmin blog</a>
-            <nav class="site-nav">
-                <a href="/knowledge/">Home</a>
-                <a href="/knowledge/tech-memo">技術メモ</a>
-                <a href="/knowledge/retrospective">振り返り</a>
-                <a href="/knowledge/tags">Tags</a>
-                <a href="/knowledge/search">Search</a>
-                <a href="/knowledge/archive">Archive</a>
-                <a href="/knowledge/about">About</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="page-content">
-        <div class="wrapper">
-            <article class="page">
-    <header class="page-header">
-        <h1>Categories</h1>
-    </header>
-
-    <div class="page-content">
-        <div class="categories-list">
-	
-
-	
-		
-			
-			
-			<section class="category-section" id="振り返り">
-				<h2 class="category-title">
-					<span class="category-icon">📂</span>振り返り
-					<span class="category-count-badge">1</span>
-				</h2>
-				<div class="category-posts">
-					
-						<article class="category-post-item clickable-card" data-href="/knowledge/2025/12/28/test/" role="link" tabindex="0" aria-label="test">
-							<h3><a href="/knowledge/2025/12/28/test/">test</a></h3>
-							<div class="post-meta">
-								<time datetime="2025-12-28T00:00:00+09:00">2025年12月28日</time>
-								
-							</div>
-							
-								<div class="post-excerpt">テスト投稿
-
-</div>
-							
-						</article>
-					
-				</div>
-			</section>
-		
-	
-</div>
-
-    </div>
-</article>
-
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="wrapper">
-            <p>&copy; 2025 n-has3. All rights reserved.</p>
-            <p>技術メモと振り返り</p>
-        </div>
-    </footer>
-
-    <script>
-    (function() {
-        function isInteractive(target) {
-            return target.closest('a, button, input, textarea, select, option');
-        }
-
-        function navigate(card) {
-            var href = card && card.dataset && card.dataset.href;
-            if (!href) return;
-            window.location.href = href;
-        }
-
-        function bindCard(card) {
-            if (!card || card.dataset.clickBound) return;
-            card.dataset.clickBound = 'true';
-
-            card.addEventListener('click', function(event) {
-                if (isInteractive(event.target)) return;
-                navigate(card);
-            });
-
-            card.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    navigate(card);
-                }
-            });
-        }
-
-        function initClickableCards() {
-            var cards = document.querySelectorAll('.clickable-card[data-href]');
-            cards.forEach(bindCard);
-
-            if (window.MutationObserver && !initClickableCards.observer) {
-                initClickableCards.observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        mutation.addedNodes.forEach(function(node) {
-                            if (!node || node.nodeType !== 1) return;
-                            if (node.matches && node.matches('.clickable-card[data-href]')) {
-                                bindCard(node);
-                            }
-                            if (node.querySelectorAll) {
-                                node.querySelectorAll('.clickable-card[data-href]').forEach(bindCard);
-                            }
-                        });
-                    });
-                });
-
-                initClickableCards.observer.observe(document.body, {
-                    childList: true,
-                    subtree: true
-                });
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initClickableCards);
-        } else {
-            initClickableCards();
-        }
-    })();
-    </script>
+  <p>Redirecting...</p>
 </body>
 </html>

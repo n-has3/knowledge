@@ -38,7 +38,14 @@ permalink: /tags/
 								{% if post.categories.size > 0 %}
 									<span class="post-categories">
 										{% for category in post.categories %}
-											<a class="category" href="{{ '/categories' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+											{% assign cat_slug = category | slugify %}
+											{% assign cat_path = '/archive' %}
+											{% if category == '技術メモ' %}
+												{% assign cat_path = '/tech-memo' %}
+											{% elsif category == '振り返り' %}
+												{% assign cat_path = '/retrospective' %}
+											{% endif %}
+											<a class="category" href="{{ cat_path | relative_url }}#{{ cat_slug }}">{{ category }}</a>
 										{% endfor %}
 									</span>
 								{% endif %}

@@ -7,7 +7,7 @@ permalink: /retrospective/
 <div class="categories-list">
   {% assign retro_posts = site.posts | where_exp: "post", "post.categories contains '振り返り'" %}
   {% if retro_posts.size > 0 %}
-    <section class="category-section">
+    <section class="category-section" id="{{ '振り返り' | slugify }}">
       <h2 class="category-title">
         <span class="category-icon">📂</span>振り返り
         <span class="category-count-badge">{{ retro_posts.size }}</span>

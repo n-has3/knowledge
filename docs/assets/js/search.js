@@ -90,7 +90,11 @@
                         <time>${post.date}</time>
                         ${post.categories.length > 0 ? `
                             <span class="post-categories">
-                                ${post.categories.map(cat => `<span class="category">${cat}</span>`).join('')}
+                                ${post.categories.map(cat => {
+                                    const slug = cat.toLowerCase() === '技術メモ' ? '技術メモ' : cat.toLowerCase() === '振り返り' ? '振り返り' : cat;
+                                    const base = cat === '技術メモ' ? '/knowledge/tech-memo' : cat === '振り返り' ? '/knowledge/retrospective' : '/knowledge/archive';
+                                    return `<a class="category" href="${base}#${slug}">${cat}</a>`;
+                                }).join('')}
                             </span>
                         ` : ''}
                         ${post.tags.length > 0 ? `

@@ -7,7 +7,7 @@ permalink: /tech-memo/
 <div class="categories-list">
   {% assign tech_posts = site.posts | where_exp: "post", "post.categories contains '技術メモ'" %}
   {% if tech_posts.size > 0 %}
-    <section class="category-section">
+    <section class="category-section" id="{{ '技術メモ' | slugify }}">
       <h2 class="category-title">
         <span class="category-icon">📂</span>技術メモ
         <span class="category-count-badge">{{ tech_posts.size }}</span>
