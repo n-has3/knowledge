@@ -1,4 +1,4 @@
-# Tech Knowledge Base
+# # nmin blog
 
 技術メモとナレッジベースを共有するブログサイトです。
 
@@ -41,9 +41,8 @@ bundle exec jekyll serve
 ### ビルド & デプロイ
 
 このサイトは**ローカルでビルドしてから**GitHub Pagesにデプロイします。
-GitHub Actionsは使用しません。
 
-#### 方法1: ビルドのみ
+#### ビルド
 
 ```bash
 # ビルドスクリプトを実行
@@ -52,16 +51,6 @@ GitHub Actionsは使用しません。
 # 静的ファイルが docs/ ディレクトリに生成されます
 ```
 
-#### 方法2: ビルド + コミット + プッシュ（推奨）
-
-```bash
-# デプロイスクリプトを実行
-./deploy.sh
-
-# 対話形式で:
-# 1. ビルドを自動実行
-# 2. コミットメッセージを入力
-# 3. プッシュ確認
 ```
 
 #### GitHub Pages設定
@@ -78,6 +67,7 @@ GitHub Actionsは使用しません。
 ```
 .
 ├── _config.yml          # サイト設定
+├── _feature-post/       # 記事の下書き置き場
 ├── _layouts/            # レイアウトテンプレート
 │   ├── default.html     # 基本レイアウト
 │   ├── home.html        # トップページ
@@ -90,15 +80,21 @@ GitHub Actionsは使用しません。
 │   └── js/
 │       └── search.js    # 検索機能
 ├── docs/                # ビルド済み静的ファイル（GitHub Pages公開用）
+├── img/                 # 画像アセット
+├── template/            # 新規記事テンプレート
 ├── build.sh             # ビルドスクリプト
 ├── deploy.sh            # デプロイスクリプト
+├── Gemfile              # Ruby依存の定義
+├── Gemfile.lock         # 依存関係のロックファイル
 ├── .nojekyll            # GitHub PagesでJekyllビルドを無効化
 ├── about.md             # Aboutページ
 ├── archive.md           # アーカイブページ
-├── categories.md        # カテゴリページ
 ├── tags.md              # タグページ
 ├── search.md            # 検索ページ
-└── index.md             # トップページ
+├── search.json          # 検索インデックス
+├── index.md             # トップページ
+├── retrospective.md     # 振り返りページ
+├── tech-memo.md         # 技術メモページ
 ```
 
 ## ✍️ 記事の書き方
@@ -129,23 +125,6 @@ tags: [タグ1, タグ2]
 - リンク: `[テキスト](URL)`
 - 画像: `![代替テキスト](画像URL)`
 
-### 記事作成 → 公開のワークフロー
-
-```bash
-# 1. 記事を作成
-touch _posts/2025-12-29-new-article.md
-
-# 2. ローカルで確認
-bundle exec jekyll serve
-# → http://localhost:4000/knowledge/ で確認
-
-# 3. ビルド & デプロイ
-./deploy.sh
-# → コミットメッセージを入力してプッシュ
-
-# 4. GitHub Pages設定が完了していれば、数分後にサイトが更新される
-```
-
 ## 🎨 カスタマイズ
 
 ### サイト設定の変更
@@ -174,15 +153,3 @@ bundle exec jekyll serve
 - [Jekyll](https://jekyllrb.com/) - 静的サイトジェネレーター
 - [GitHub Pages](https://pages.github.com/) - ホスティング
 - [Markdown](https://www.markdownguide.org/) - 記事の執筆
-
-## 🤝 コントリビューション
-
-バグ報告や機能提案は、GitHubのIssuesからお願いします。
-
-## 📄 ライセンス
-
-MIT License
-
-## 📮 お問い合わせ
-
-ご質問やフィードバックがありましたら、GitHubのIssuesからお気軽にご連絡ください。

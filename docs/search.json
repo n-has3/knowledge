@@ -1,13 +1,3 @@
 [
   
-    {
-      "title": "demo",
-      "url": "/knowledge/2025/12/28/demo/",
-      "date": "2025年12月28日",
-      "categories": ["Jekyll","Web開発"],
-      "tags": ["Jekyll","GitHub Pages","ブログ"],
-      "excerpt": "GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。",
-      "content": "GitHub PagesとJekyllを使って技術ブログを構築する方法を紹介します。JekyllとはJekyllは静的サイトジェネレーターで、Markdownファイルから美しいウェブサイトを生成できます。GitHub Pagesと統合されているため、無料でホスティングできます。基本的な構成Jekyllサイトの基本構成は以下の通りです：.├── _config.yml       # サイト設定├── _layouts/         # レイアウトテンプレート├── _posts/          # ブログ記事├── assets/          # CSS、画像などの静的ファイル└── index.md         # トップページ記事の書き方記事は _posts ディレクトリに配置します。ファイル名は YYYY-MM-DD-title.md の形式にする必要があります。Front Matter各記事の先頭には、YAMLフロントマターを記述します：---layout: posttitle: \"記事のタイトル\"date: 2025-12-28categories: [カテゴリ1, カテゴリ2]tags: [タグ1, タグ2]---Markdown記法Jekyllでは標準的なMarkdown記法が使えます：  太字: **太字**  斜体: *斜体*  リンク: [リンク](URL)  コードブロック: バッククォート3つで囲むコードのシンタックスハイライトdef hello_world():    print(\"Hello, World!\")    return Trueconst greeting = (name) =&gt; {    console.log(`Hello, ${name}!`);};便利な機能カテゴリとタグ記事にカテゴリとタグを設定することで、コンテンツを整理できます。パーマリンク_config.yml でパーマリンクの形式をカスタマイズできます：permalink: /:year/:month/:day/:title/SEO対策jekyll-seo-tag プラグインを使用すると、メタタグが自動的に生成されます。まとめJekyllは学習コストが低く、すぐに技術ブログを始められます。Markdownで記事を書くだけなので、コンテンツ作成に集中できるのが魅力です。次回は、カスタムテーマの作り方について解説します。参考リンク  Jekyll公式ドキュメント  GitHub Pages  Markdown記法"
-    }
-  
 ]
