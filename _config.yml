@@ -3,8 +3,8 @@ title: nmin blog
 subtitle: nmin blog
 description: 技術メモと振り返り
 author: n-has3
-url: "https://nmin70.github.io/knowledge"
-baseurl: ""
+url: "https://nmin70.github.io"
+baseurl: "/knowledge"
 
 # ビルド設定
 markdown: kramdown
