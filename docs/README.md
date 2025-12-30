@@ -42,13 +42,32 @@ bundle exec jekyll serve
 
 このサイトは**ローカルでビルドしてから**GitHub Pagesにデプロイします。
 
-#### ビルド
+#### 開発中のプレビュー
 
 ```bash
-# ビルドスクリプトを実行
+# ローカルサーバーを起動（自動リロード付き）
+./scripts/serve.sh
+
+# ブラウザで確認
+# http://localhost:4000/knowledge/
+```
+
+#### 本番ビルド
+
+```bash
+# GitHub Pages用にビルド
 ./scripts/build.sh
 
 # 静的ファイルが docs/ ディレクトリに生成されます
+```
+
+#### デプロイ
+
+```bash
+# ビルド → コミット → プッシュを一括実行
+./scripts/deploy.sh
+
+# 対話形式でデプロイプロセスを進めます
 ```
 
 ```
