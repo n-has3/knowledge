@@ -9,7 +9,7 @@ layout: default
         <p class="home-description">{{ site.description }}</p>
         <div class="home-actions">
             {% assign latest = site.posts | first %}
-            <a class="btn btn-primary" href="{% if latest %}{{ latest.url | relative_url }}{% else %}{{ '/tech-memo' | relative_url }}{% endif %}">
+            <a class="btn btn-primary" href="{% if latest %}{{ latest.url | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
                 <i class="ri-flashlight-line"></i> 最新を読む
             </a>
             <a class="btn btn-ghost" href="{{ '/tags' | relative_url }}">
@@ -30,10 +30,6 @@ layout: default
             <div class="post-grid">
             {% for post in site.posts %}
                 <article class="post-item post-card clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="{{ post.title | escape }}">
-                    <div class="post-badge">
-                        {% assign first_cat = post.categories | first %}
-                        {% if first_cat %}{{ first_cat }}{% else %}Note{% endif %}
-                    </div>
                     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                     <div class="post-meta-row">
                         <p class="post-meta">
@@ -43,13 +39,6 @@ layout: default
                                 </time>
                             </span>
                         </p>
-                        {% if post.categories.size > 0 %}
-                            <div class="post-categories-inline">
-                                {% for category in post.categories %}
-                                    <a href="{{ '/tech-memo' | relative_url }}" class="category"><i class="ri-folder-2-line"></i>{{ category }}</a>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
                     </div>
                     {% if post.excerpt %}
                         <div class="post-excerpt">
@@ -71,27 +60,12 @@ layout: default
         {% endif %}
     </div>
 
-    <!-- カテゴリセクション -->
-    <div class="home-categories-section">
-        <h2>カテゴリ</h2>
-        <div class="home-categories">
-            {% assign sorted_categories = site.categories | sort %}
-            {% for category in sorted_categories %}
-                {% assign cat_name = category[0] %}
-                <a href="{{ '/tech-memo' | relative_url }}" class="home-category">
-                    <span class="category-name">{{ cat_name }}</span>
-                    <span class="category-count">{{ category[1].size }}</span>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-
-    <!-- タグクラウドセクション -->
+    <!-- タグセクション -->
     <div class="home-tags-section">
-        <h2>人気のタグ</h2>
+        <h2>タグ</h2>
         <div class="home-tags">
             {% assign sorted_tags = site.tags | sort %}
-            {% for tag in sorted_tags limit:15 %}
+            {% for tag in sorted_tags %}
                 <a class="home-tag" href="{{ '/tags' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] }} <span class="tag-count">({{ tag[1].size }})</span></a>
             {% endfor %}
         </div>
