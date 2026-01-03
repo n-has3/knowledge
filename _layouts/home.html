@@ -9,7 +9,7 @@ layout: default
         <p class="home-description">{{ site.description }}</p>
         <div class="home-actions">
             {% assign latest = site.posts | first %}
-            <a class="btn btn-primary" href="{% if latest %}{{ latest.url | relative_url }}{% else %}{{ '/archive' | relative_url }}{% endif %}">
+            <a class="btn btn-primary" href="{% if latest %}{{ latest.url | relative_url }}{% else %}{{ '/tech-memo' | relative_url }}{% endif %}">
                 <i class="ri-flashlight-line"></i> 最新を読む
             </a>
             <a class="btn btn-ghost" href="{{ '/tags' | relative_url }}">
@@ -25,7 +25,6 @@ layout: default
     <div class="post-list">
         <div class="section-head">
             <h2>最新の記事</h2>
-            <a class="section-link" href="{{ '/archive' | relative_url }}"><i class="ri-archive-drawer-line"></i> アーカイブへ</a>
         </div>
         {% if site.posts.size > 0 %}
             <div class="post-grid">
@@ -47,14 +46,7 @@ layout: default
                         {% if post.categories.size > 0 %}
                             <div class="post-categories-inline">
                                 {% for category in post.categories %}
-                                    {% assign cat_slug = category | slugify %}
-                                    {% assign cat_path = '/archive' %}
-                                    {% if category == '技術メモ' %}
-                                        {% assign cat_path = '/tech-memo' %}
-                                    {% elsif category == '振り返り' %}
-                                        {% assign cat_path = '/retrospective' %}
-                                    {% endif %}
-                                    <a href="{{ cat_path | relative_url }}#{{ cat_slug }}" class="category"><i class="ri-folder-2-line"></i>{{ category }}</a>
+                                    <a href="{{ '/tech-memo' | relative_url }}" class="category"><i class="ri-folder-2-line"></i>{{ category }}</a>
                                 {% endfor %}
                             </div>
                         {% endif %}
@@ -86,14 +78,7 @@ layout: default
             {% assign sorted_categories = site.categories | sort %}
             {% for category in sorted_categories %}
                 {% assign cat_name = category[0] %}
-                {% assign cat_slug = cat_name | slugify %}
-                {% assign cat_path = '/archive' %}
-                {% if cat_name == '技術メモ' %}
-                    {% assign cat_path = '/tech-memo' %}
-                {% elsif cat_name == '振り返り' %}
-                    {% assign cat_path = '/retrospective' %}
-                {% endif %}
-                <a href="{{ cat_path | relative_url }}#{{ cat_slug }}" class="home-category">
+                <a href="{{ '/tech-memo' | relative_url }}" class="home-category">
                     <span class="category-name">{{ cat_name }}</span>
                     <span class="category-count">{{ category[1].size }}</span>
                 </a>
