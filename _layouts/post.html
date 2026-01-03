@@ -14,20 +14,6 @@ layout: default
             {% if page.author %}
                 <span class="meta-block"><i class="ri-user-3-line"></i>by {{ page.author }}</span>
             {% endif %}
-            {% if page.categories.size > 0 %}
-                <span class="post-categories">
-                    {% for category in page.categories %}
-                        {% assign cat_slug = category | slugify %}
-                        {% assign cat_path = '/archive' %}
-                        {% if category == '技術メモ' %}
-                            {% assign cat_path = '/tech-memo' %}
-                        {% elsif category == '振り返り' %}
-                            {% assign cat_path = '/retrospective' %}
-                        {% endif %}
-                        <a class="category" href="{{ cat_path | relative_url }}#{{ cat_slug }}"><i class="ri-folder-2-line"></i>{{ category }}</a>
-                    {% endfor %}
-                </span>
-            {% endif %}
         </p>
     </header>
 

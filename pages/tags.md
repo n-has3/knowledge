@@ -33,20 +33,6 @@ permalink: /tags/
 								<div class="post-meta">
 									<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
 								</div>
-								{% if post.categories.size > 0 %}
-									<div class="post-categories-inline">
-										{% for category in post.categories %}
-											{% assign cat_slug = category | slugify %}
-											{% assign cat_path = '/archive' %}
-											{% if category == '技術メモ' %}
-												{% assign cat_path = '/tech-memo' %}
-											{% elsif category == '振り返り' %}
-												{% assign cat_path = '/retrospective' %}
-											{% endif %}
-											<a class="category" href="{{ cat_path | relative_url }}#{{ cat_slug }}">{{ category }}</a>
-										{% endfor %}
-									</div>
-								{% endif %}
 							</div>
 							{% if post.excerpt %}
 								<div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</div>

@@ -92,11 +92,7 @@
                         </div>
                         ${post.categories.length > 0 ? `
                             <div class="post-categories-inline">
-                                ${post.categories.map(cat => {
-                                    const slug = cat.toLowerCase() === '技術メモ' ? '技術メモ' : cat.toLowerCase() === '振り返り' ? '振り返り' : cat;
-                                    const base = cat === '技術メモ' ? '/knowledge/tech-memo' : cat === '振り返り' ? '/knowledge/retrospective' : '/knowledge/archive';
-                                    return `<a class="category" href="${base}#${slug}">${cat}</a>`;
-                                }).join('')}
+                                ${post.categories.map(cat => `<span class="category">${cat}</span>`).join('')}
                             </div>
                         ` : ''}
                     </div>
