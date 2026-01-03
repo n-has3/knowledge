@@ -86,7 +86,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo ""
     if [ "$CURRENT_BRANCH" = "main" ]; then
         echo "🌐 サイトは数分後に更新されます:"
-        echo "   https://n-has3.github.io/knowledge/"
+        echo "   https://nmin70.github.io/knowledge/"
         echo ""
         echo "💡 ローカルで確認するには:"
         echo "   bundle exec jekyll serve"

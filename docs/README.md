@@ -1,10 +1,10 @@
-# # nmin blog
+# # nmin wiki
 
-技術メモとナレッジベースを共有するブログサイトです。
+nminの技術メモとナレッジベースを共有するブログサイトです。
 
 ## 🌐 サイトURL
 
-https://n-has3.github.io/knowledge/
+https://nmin70.github.io/knowledge/
 
 ## 📝 概要
 
@@ -22,7 +22,7 @@ GitHub PagesとJekyllを使用して構築されています。
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/n-has3/knowledge.git
+git clone https://github.com/nmin70/knowledge.git
 cd knowledge
 
 # 依存パッケージのインストール
@@ -105,7 +105,7 @@ bundle exec jekyll serve
 │   ├── retrospective.md # 振り返りページ
 │   ├── search.md        # 検索ページ
 │   ├── tags.md          # タグページ
-│   ├── tech-memo.md     # 技術メモページ
+│   ├── tech-memo.md     # nminの技術メモページ
 │   └── test-interactions.md  # テストページ
 ├── _templates/          # 新規記事テンプレート
 ├── docs/                # ビルド済み静的ファイル（GitHub Pages公開用）

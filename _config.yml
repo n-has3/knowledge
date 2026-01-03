@@ -1,8 +1,8 @@
 # サイト設定
-title: nmin blog
-subtitle: nmin blog
-description: 技術メモブログ
-author: n-has3
+title: nmin wiki
+subtitle: nmin wiki
+description: nminの技術メモ
+author: nmin70
 url: "https://nmin70.github.io"
 baseurl: "/knowledge"
 
@@ -26,7 +26,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "n-has3"
+      author: "nmin70"
 
 # 表示設定
 show_excerpts: true

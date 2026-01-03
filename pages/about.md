@@ -13,12 +13,17 @@ nmin
 
 ### 自己紹介
 nminと申します。  
-日々新しい技術を学びながら、個人的なプロジェクトやメモをこのブログでまとめていきます。
+日々新しい技術を学びながら、個人的な検証メモをまとめていきます。
 
 ### スキル
 (更新予定)
 
 ### 各種リンク
-**⚫️　GitHub**  
-[n-has3 - Overview](https://github.com/n-has3)
+<div class="social-links">
+  <a href="https://github.com/nmin70" class="social-link github" target="_blank" rel="noopener noreferrer">
+    <i class="ri-github-fill"></i>
+    <span>GitHub</span>
+    <p class="social-desc">nmin70</p>
+  </a>
+</div>
 

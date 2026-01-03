@@ -4,27 +4,63 @@ layout: default
 
 <article class="home">
     <div class="home-header">
-        <div class="home-kicker">Latest Notes</div>
-        <h1>{{ site.title }}</h1>
+        <div class="home-kicker"><i class="ri-lightbulb-flash-line"></i> Latest Notes</div>
+        <h1 class="home-title">{{ site.title }}</h1>
         <p class="home-description">{{ site.description }}</p>
         <div class="home-actions">
             {% assign latest = site.posts | first %}
-            <a class="btn btn-primary" href="{% if latest %}{{ latest.url | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
-                <i class="ri-flashlight-line"></i> 最新を読む
+            {% if latest %}
+                <a class="btn btn-primary" href="{{ latest.url | relative_url }}">
+                    <i class="ri-flashlight-line"></i> 最新を読む
+                </a>
+            {% endif %}
+            <a class="btn btn-ghost" href="{{ '/tech-memo' | relative_url }}">
+                <i class="ri-file-list-3-line"></i> 記事一覧
             </a>
             <a class="btn btn-ghost" href="{{ '/tags' | relative_url }}">
                 <i class="ri-hashtag"></i> タグ一覧
             </a>
+            <a class="btn btn-ghost" href="{{ '/about' | relative_url }}">
+                <i class="ri-user-3-line"></i> About
+            </a>
         </div>
         <div class="home-stats">
-            <div class="stat-pill"><i class="ri-file-list-3-line"></i><span>{{ site.posts | size }} Posts</span></div>
-            <div class="stat-pill"><i class="ri-price-tag-3-line"></i><span>{{ site.tags | size }} Tags</span></div>
+            <div class="stat-pill">
+                <i class="ri-file-list-3-line"></i>
+                <div class="stat-content">
+                    <span class="stat-number">{{ site.posts | size }}</span>
+                    <span class="stat-label">Posts</span>
+                </div>
+            </div>
+            <div class="stat-pill">
+                <i class="ri-price-tag-3-line"></i>
+                <div class="stat-content">
+                    <span class="stat-number">{{ site.tags | size }}</span>
+                    <span class="stat-label">Tags</span>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="home-featured">
+        {% assign latest = site.posts | first %}
+        {% if latest %}
+            <div class="featured-card">
+                <div class="featured-label">最新記事</div>
+                <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+                <p class="featured-date"><i class="ri-calendar-2-line"></i> {{ latest.date | date: site.date_format }}</p>
+                {% if latest.excerpt %}
+                    <p class="featured-excerpt">{{ latest.excerpt | strip_html | truncate: 200 }}</p>
+                {% endif %}
+                <a href="{{ latest.url | relative_url }}" class="featured-link">read more <i class="ri-arrow-right-line"></i></a>
+            </div>
+        {% endif %}
     </div>
 
     <div class="post-list">
         <div class="section-head">
-            <h2>最新の記事</h2>
+            <h2><i class="ri-bookmark-line"></i> 記事一覧</h2>
+            <a class="section-link" href="{{ '/tech-memo' | relative_url }}"><i class="ri-arrow-right-line"></i> すべて記事</a>
         </div>
         {% if site.posts.size > 0 %}
             <div class="post-grid">
@@ -58,16 +94,5 @@ layout: default
         {% else %}
             <p>まだ記事がありません。</p>
         {% endif %}
-    </div>
-
-    <!-- タグセクション -->
-    <div class="home-tags-section">
-        <h2>タグ</h2>
-        <div class="home-tags">
-            {% assign sorted_tags = site.tags | sort %}
-            {% for tag in sorted_tags %}
-                <a class="home-tag" href="{{ '/tags' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] }} <span class="tag-count">({{ tag[1].size }})</span></a>
-            {% endfor %}
-        </div>
     </div>
 </article>
